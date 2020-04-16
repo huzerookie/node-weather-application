@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/employee-icon.png">
+
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <form>
+            <input type="text" placeholder="Enter Employee Id">
+            {{!-- <input type="submit" value="Submit"> --}}
+            <button>Search</button>
+            <p id="message1"></p>
+            <p id="message2"></p>
+        </form>
+    </div>
+    {{>footer}}
+    <script src="/js/employeeIndex.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/forecast-icon.png">
+
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <form>
+            <input type="text" placeholder="Location">
+            {{!-- <input type="submit" value="Submit"> --}}
+            <button>Search</button>
+            <p id="message1"></p><br>
+            <p id="message2"></p>
+        </form>
+    </div>
+    {{>footer}}
+    <script src="/js/index.js"></script>
+</body>
+
+</html>
