@@ -6,6 +6,8 @@ const geocode = require('./utils/geocode.js')
 const employee = require('./utils/employee.js')
 const request = require('request')
 
+const port = process.env.PORT || 3000
+
 //Define paths for Express Config
 const path = require('path')
 // console.log(__dirname)
@@ -23,22 +25,22 @@ app.use(express.static(publicPathDirectory))
 //Index Page
 app.get('', (req, res) => {
     res.render('index', {
-        title: 'Home Page',
+        title: 'Weather Forecast',
         name: 'Huzefa'
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About Me',
-        aboutMessage: 'About Weather Info',
+        title: 'About',
+        aboutMessage: 'We have used MapBox API and DarkSky API to gather Weather information from locations.',
         name: 'Huzefa'
     })
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        title: 'Helper Page',
+        title: 'Help',
         message: 'We are here to help you',
         name: 'Huzefa'
     })
@@ -78,23 +80,23 @@ app.get('/products', (req, res) => {
         })
     }
     // console.log(req.query.search)
-    console.log(req.query)
+ //   console.log(req.query)
     res.send({
         products: []
     })
 })
 
-app.get('/cutie-patootie', (req, res) => {
-    res.render('cutie-patootie', {
-        title: 'Cutie Patootie',
-        name: 'Huzefa'
-    })
-})
+// app.get('/cutie-patootie', (req, res) => {
+//     res.render('cutie-patootie', {
+//         title: 'Cutie Patootie',
+//         name: 'Huzefa'
+//     })
+// })
 
 app.get('/employee-index',(req,res)=>{
     res.render('employee-index',{
         name:'Huzefa',
-        title:'Employee'
+        title:'Search Employee'
     })
 })
 
@@ -130,7 +132,7 @@ app.get('/employee', (req, res) => {
 app.get('/help/*', (req, res) => {
     res.render('error', {
         title: 'Error 404',
-        errorMessage: 'Help article not found',
+        errorMessage: 'Sorry! Help article not found',
         name: 'Huzefa'
 
     })
@@ -138,13 +140,13 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('error', {
         title: 'Error 404',
-        errorMessage: 'Page Not Found',
+        errorMessage: 'Sorry! Page Not Found',
         name: 'Huzefa'
     })
 })
 
 
-app.listen(3000, () => {
-    console.log("Server started")
+app.listen(port, () => {
+    console.log("Server started at port "+port)
 })
 

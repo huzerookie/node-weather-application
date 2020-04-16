@@ -35,9 +35,9 @@ const employeeFinder = (empId, callback) => {
 employeeFinder('1',(error,{employee_name:name, employee_salary:sal}={})=>{    
      //Used destructuring i.e out of the total json, used on employee_name and employee_sal
      if(error){
-          return console.log(error)
+      //    return console.log(error)
      }
-     return console.log(name+'-----'+sal)
+    // return console.log(name+'-----'+sal)
 
 })
 

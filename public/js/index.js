@@ -8,7 +8,7 @@ fetch('https://puzzle.mead.io/puzzle').then((response) => {
 })
 
 const locationForecast = (address) => {
-    fetch('http://localhost:3000/weather?address=' + address).then((response) => { //Sending req inside fetch fetch(req).then()
+    fetch('/weather?address=' + address).then((response) => { //Sending req inside fetch fetch(req).then()
         response.json().then((data) => {
             if (data.error) {
                 message2.textContent = ''
