@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/potato.png">
+    <title>Weather Forecast</title>
+
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <form>
+           <p style="color: red" id="invalidMessage"></p>
+            <input style="padding-bottom: 10px;" type="text" placeholder="Username" id="username">
+            <input style="padding-bottom: 10px;" type="password" placeholder="Password" id="password">
+
+            <button>Submit</button>
+            
+            
+        </form>
+    </div>
+    {{>footer}}
+    <script src="/js/cutiepatootie.js"></script>
+</body>
+
+</html>

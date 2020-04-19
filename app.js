@@ -80,23 +80,43 @@ app.get('/products', (req, res) => {
         })
     }
     // console.log(req.query.search)
- //   console.log(req.query)
+    //   console.log(req.query)
     res.send({
         products: []
     })
 })
 
-// app.get('/cutie-patootie', (req, res) => {
-//     res.render('cutie-patootie', {
-//         title: 'Cutie Patootie',
-//         name: 'Huzefa'
-//     })
-// })
+app.get('/cutie-patootie-login', (req, res) => {
+    res.render('cutie-patootie-login', {
+        title: 'Login CP',
+        name: 'Huzefa',
+       
+    })
+})
 
-app.get('/employee-index',(req,res)=>{
-    res.render('employee-index',{
-        name:'Huzefa',
-        title:'Search Employee'
+app.get('/cutie-patootie', (req, res) => {
+   // console.log(req.query.username == 'SRampurawala' && req.query.password == 'cutiePatootie!@#$')
+   console.log(req.query.username  )
+   if(req.query.username=='admin'){
+            res.render('cutie-patootie',{
+                title: 'Ayye!! Welcome Cutie Patootie',
+                name: 'Huzefa'
+            })     
+        }
+        else{
+            res.render('cutie-patootie-login',{
+                title: 'Login CP',
+                name: 'Huzefa',
+       
+
+            })
+        }
+})
+
+app.get('/employee-index', (req, res) => {
+    res.render('employee-index', {
+        name: 'Huzefa',
+        title: 'Search Employee'
     })
 })
 
@@ -147,6 +167,6 @@ app.get('*', (req, res) => {
 
 
 app.listen(port, () => {
-    console.log("Server started at port "+port)
+    console.log("Server started at port " + port)
 })
 
